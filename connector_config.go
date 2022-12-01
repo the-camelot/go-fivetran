@@ -187,7 +187,7 @@ type ConnectorConfig struct {
 	consumerKey                      *string
 	consumerSecret                   *string
 	key                              *string
-	advertisersID                    []string
+	advertisersID                    []int
 	syncFormat                       *string
 	bucketService                    *string
 	userName                         *string
@@ -394,7 +394,7 @@ type connectorConfigRequest struct {
 	ConsumerKey                      *string                                              `json:"consumer_key,omitempty"`
 	ConsumerSecret                   *string                                              `json:"consumer_secret,omitempty"`
 	Key                              *string                                              `json:"key,omitempty"`
-	AdvertisersID                    []string                                             `json:"advertisers_id,omitempty"`
+	AdvertisersID                    []int                                                `json:"advertisers_id,omitempty"`
 	SyncFormat                       *string                                              `json:"sync_format,omitempty"`
 	BucketService                    *string                                              `json:"bucket_service,omitempty"`
 	UserName                         *string                                              `json:"user_name,omitempty"`
@@ -601,7 +601,7 @@ type ConnectorConfigResponse struct {
 	ConsumerKey                      string                                               `json:"consumer_key"`
 	ConsumerSecret                   string                                               `json:"consumer_secret"`
 	Key                              string                                               `json:"key"`
-	AdvertisersID                    []string                                             `json:"advertisers_id"`
+	AdvertisersID                    []int                                                `json:"advertisers_id"`
 	SyncFormat                       string                                               `json:"sync_format"`
 	BucketService                    string                                               `json:"bucket_service"`
 	UserName                         string                                               `json:"user_name"`
@@ -1788,7 +1788,7 @@ func (cc *ConnectorConfig) Key(value string) *ConnectorConfig {
 	return cc
 }
 
-func (cc *ConnectorConfig) AdvertisersID(value []string) *ConnectorConfig {
+func (cc *ConnectorConfig) AdvertisersID(value []int) *ConnectorConfig {
 	cc.advertisersID = value
 	return cc
 }
